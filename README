@@ -6,6 +6,8 @@ This will run for 23 minutes and start counting from the beginning.
 
 Make sure that Redis is installed from redis.io, python libraries redis, pyproj, TwitterAPI are installed.
 
+Also be sure to make sure the redis server is running:
+/etc/init.d/redis start
 
 Software Architecture:
 
