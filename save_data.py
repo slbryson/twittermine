@@ -3,7 +3,7 @@
 import json, redis, csv
 
 OUTPUT_FILE = 'output.json'
-OUTPUT_CSV = 'output.csv'
+OUTPUT_CSV = 'boulder.csv'
 REDIS_SERVER = "localhost"
 
 

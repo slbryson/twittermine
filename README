@@ -4,6 +4,9 @@ Run: python infer-load.py 23 0
 
 This will run for 23 minutes and start counting from the beginning.
 
+Note if you rerun the command the "0" input for the redis dB will continue counting from last time.  "1" actually flushes
+or resets the redis dB.
+
 Make sure that Redis is installed from redis.io, python libraries redis, pyproj, TwitterAPI are installed.
 
 Also be sure to make sure the redis server is running:

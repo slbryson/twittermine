@@ -1,4 +1,3 @@
-
 import ConfigParser, sys
 import lat_long_calc as llc
 import google_map_wrapper as gmw
@@ -20,7 +19,9 @@ def get_location_info(config_filename):
 
 def main(duration_minutes, reset_db):
 	address, grid_length_mtrs = get_location_info(CONFIG_FILENAME)
+	print 'Address =', address, "  ", grid_length_mtrs
 	sw_longlat, ne_longlat, bbox_strng = gmw.get_bounding_box_longlats(address)
+	print "SW long lat =", sw_longlat, 'NE long lat =', ne_longlat
 	zone = llc.zone_utm_longlat(sw_longlat, ne_longlat, grid_length_mtrs)
 	tweet_count_dict = taw.count_tweets(bbox_strng, zone, duration_minutes, reset_db)
 	write_as_json(tweet_count_dict)

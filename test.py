@@ -13,7 +13,7 @@ api = TwitterAPI.TwitterAPI(CK, CS, AT, ATS)
 serviceurl = 'http://maps.googleapis.com/maps/api/geocode/json?'
 import json
 import urllib
-address = 'Boston, MA'
+address = 'Denver, CO'
 url = serviceurl + urllib.urlencode({'sensor':'false', 'address': address})
 uh = urllib.urlopen(url)
 data = uh.read()

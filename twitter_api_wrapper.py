@@ -68,10 +68,8 @@ def create_count_dict(zone):
 	x_index_max, y_index_max = zone.get_grid_index(zone.ne_longlat_tuple)
 	for i in range(0, x_index_max + 1):
 		for j in range(0, y_index_max + 1):
-			sw_grid_point_longlat = (zone.sw_longlat_tuple[0] + i * zone.grid_length_long,
-									 zone.sw_longlat_tuple[1] + j * zone.grid_length_lat)
-			mid_point_grid = (sw_grid_point_longlat[0] + 0.5 * zone.grid_length_long,
-							  sw_grid_point_longlat[1] + 0.5 * zone.grid_length_lat)
+			sw_grid_point_longlat = (zone.sw_longlat_tuple[0] + i * zone.grid_length_long, zone.sw_longlat_tuple[1] + j * zone.grid_length_lat)
+			mid_point_grid = (sw_grid_point_longlat[0] + 0.5 * zone.grid_length_long, sw_grid_point_longlat[1] + 0.5 * zone.grid_length_lat)
 			grid_index_dict[(i, j)] = mid_point_grid
 			tweet_count_dict[mid_point_grid] = 0
 
