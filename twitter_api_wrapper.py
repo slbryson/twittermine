@@ -18,11 +18,15 @@ REDIS_SAVE_EVERY_N_TWEETS = 100
 
 def count_tweets(bbox_strng, zone, duration_minutes, reset_db):
 	grid_index_dict, tweet_count_dict = create_count_dict(zone)
-	r_server = initiate_redis_DB(tweet_count_dict, reset_db)
+	# r_server is the redis read dictionary.
+	# tweet_count_dict is overall bounding box of the city broken into grids.  
+	# This allows the counts to be located within one of the tile points an counted.  
+	r_server  = initiate_redis_DB(tweet_count_dict, reset_db)
 
 	api = TwitterAPI.TwitterAPI(CK, CS, AT, ATS)
-	end_time = datetime.now() + timedelta(seconds = int(60 * duration_minutes))
+	end_time = datetime.now() + timedelta(seconds = int(60 * duration_minutes/4))
 	r = api.request('statuses/filter', {'locations': bbox_strng})
+	tws =[]
 	count = 0
 	
 	for item in r.get_iterator():
@@ -31,22 +35,39 @@ def count_tweets(bbox_strng, zone, duration_minutes, reset_db):
 				break
 
 		if item['coordinates']:
+			#twt_loc is already our exact coordinates
 			twt_loc = item['coordinates']['coordinates']
+			# We also need id and created_at
+			twt_id = item['id']
+			twt_time = item['created_at']
+			data = [twt_id, twt_loc[1], twt_loc[0], twt_time]
+			tws.append(data)
+			# We will keep this code, but really not necessary since the twitter API filter on locations will only return tweets from our desired location.  The code below simply pegs one of the sub grids that were created
 			if (zone.is_longlat_in_area(twt_loc) == 1):
 				i, j = zone.get_grid_index(twt_loc)
 				grid_key = grid_index_dict[(i, j)]
 				tweet_count_dict[grid_key] += 1
-				r_server.incr(list(grid_key))
+				#tweet_count dictionary is incremented is later used
+				# to count.  However REDIS is updated with the statement
+				# below @ grid_key.
+				# We should add a key in the r_server dictionary based
+				# on the id of the tweeter.
+				# Ripping out the grid as a key and replacing with ids.
+				#r_server.incr(list(grid_key))
+				r_server.append(twt_id,[twt_loc,twt_time])
 		count += 1
 		if (count % REDIS_SAVE_EVERY_N_TWEETS == 0):
 			r_server.save()
 
 	r_server.save()
-	save_redis_DB_to_csv(r_server)
+	# The module call to save from the redis dB to the CSV is temporarily removed.
+	#save_redis_DB_to_csv(r_server)
+	# Instead we use a simple write of the data to csv.  please don't let Supratim see this.  He will be disappointed.
+	save_raw_to_csv(tws)
 	return tweet_count_dict
 
 
-
+#The below routine would create raw tweet counts
 def save_tweets(bbox_strng, max_tweets):
 	api = TwitterAPI.TwitterAPI(CK, CS, AT, ATS)
 	r = api.request('statuses/filter', {'locations': bbox_strng})
@@ -54,7 +75,14 @@ def save_tweets(bbox_strng, max_tweets):
 	tws = []
 	for item in r.get_iterator():
 		if (item['coordinates']):
-				tws.append(item['coordinates']['coordinates'])
+			twt_loc = item['coordinates']['coordinates']
+			# We also need id and created_at
+			twt_id = item['id']
+			twt_time = item['created_at']
+			data = [twt_id, twt_loc, twt_time]
+			tws.append(data)
+			# older write of just the coordinateds.
+			#tws.append(item['coordinates']['coordinates'])
 		count = count + 1
 		if count == max_tweets:
 			break
