@@ -24,7 +24,7 @@ def count_tweets(bbox_strng, zone, duration_minutes, reset_db):
 	r_server  = initiate_redis_DB(tweet_count_dict, reset_db)
 
 	api = TwitterAPI.TwitterAPI(CK, CS, AT, ATS)
-	end_time = datetime.now() + timedelta(seconds = int(60 * duration_minutes/4))
+	end_time = datetime.now() + timedelta(seconds = int(60 * duration_minutes))
 	r = api.request('statuses/filter', {'locations': bbox_strng})
 	tws =[]
 	count = 0
