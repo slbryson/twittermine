@@ -20,7 +20,7 @@ def get_location_info(config_filename):
 def main(duration_minutes, reset_db):
 	#First get the location information by calling the CONFIG PARSER
 	address, grid_length_mtrs = get_location_info(CONFIG_FILENAME)
-	print 'Address =', address, "  ", grid_length_mtrs
+	print 'Address =', address, "  ", grid_length_mtrs,'Duration = ', duration_minutes
 	#Use the Google serers to calculate the bounding box
 	sw_longlat, ne_longlat, bbox_strng = gmw.get_bounding_box_longlats(address)
 	print "SW long lat =", sw_longlat, 'NE long lat =', ne_longlat
