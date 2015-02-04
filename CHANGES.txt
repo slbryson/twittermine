@@ -1,2 +1,0 @@
-Initial Repo for Twitter API Intensity Mapping Service 8-28-2014
-Made modifications to the tile size from 100m to 5m
