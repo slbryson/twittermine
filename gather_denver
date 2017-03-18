@@ -1,0 +1,168 @@
+#Shell to grab 5 minutes worth of data save and loop
+python infer_load.py 2 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l
+
+python infer_load.py 5 0
+cat denver.csv >> denver.dat
+echo "Got this many lines so far for Denver Tweets "
+cat denver.dat |wc -l

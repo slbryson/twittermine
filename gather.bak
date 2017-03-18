@@ -1,0 +1,28 @@
+#Shell to grab 25 minutes worth of data save and loop
+python infer_load.py 25 0
+cp denver.csv denver3.csv
+echo "denver 3"
+python infer_load.py 25 0
+cp denver.csv denver4.csv
+echo "denver 4"
+python infer_load.py 25 0
+cp denver.csv denver5.csv
+echo "denver 5"
+python infer_load.py 25 0
+cp denver.csv denver6.csv
+echo "denver 6"
+python infer_load.py 25 0
+cp denver.csv denver7.csv
+echo "denver 7"
+python infer_load.py 25 0
+cp denver.csv denver8.csv
+echo "denver 8"
+python infer_load.py 25 0
+cp denver.csv denver9.csv
+echo "denver 9"
+python infer_load.py 25 0
+cp denver.csv denver10.csv
+echo "denver 10"
+python infer_load.py 25 0
+cp denver.csv denver11.csv
+echo "denver 11"
